@@ -1,4 +1,1 @@
-NoReceipts
-==========
-
-Android app to eliminate receipts
+QR-Receipts

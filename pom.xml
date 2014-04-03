@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>QR-Receipts-Engine</module>
+        <module>QR-Receipts-Webservice</module>
     </modules>
 
 

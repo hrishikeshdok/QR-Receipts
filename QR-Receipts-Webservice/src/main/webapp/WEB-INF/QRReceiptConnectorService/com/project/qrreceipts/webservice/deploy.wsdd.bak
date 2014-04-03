@@ -1,0 +1,28 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from QRReceiptConnectorService WSDL service -->
+
+  <service name="QRReceiptConnector" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservice.qrreceipts.project.com"/>
+      <parameter name="wsdlServiceElement" value="QRReceiptConnectorService"/>
+      <parameter name="schemaQualified" value="http://webservice.qrreceipts.project.com"/>
+      <parameter name="wsdlServicePort" value="QRReceiptConnector"/>
+      <parameter name="className" value="com.project.qrreceipts.webservice.QRReceiptConnectorSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="QRReceiptConnector"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="foo" qname="operNS:Foo" xmlns:operNS="http://webservice.qrreceipts.project.com" returnQName="retNS:FooReturn" xmlns:retNS="http://webservice.qrreceipts.project.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="foo"/>
+
+  </service>
+</deployment>

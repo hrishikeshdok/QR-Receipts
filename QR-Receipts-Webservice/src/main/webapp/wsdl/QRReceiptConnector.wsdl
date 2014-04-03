@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservice.qrreceipts.project.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservice.qrreceipts.project.com" xmlns:intf="http://webservice.qrreceipts.project.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservice.qrreceipts.project.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="Foo">
+    <complexType/>
+   </element>
+   <element name="FooResponse">
+    <complexType>
+     <sequence>
+      <element name="FooReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="FooRequest">
+
+      <wsdl:part element="impl:Foo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="FooResponse">
+
+      <wsdl:part element="impl:FooResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="QRReceiptConnector">
+
+      <wsdl:operation name="Foo">
+
+         <wsdl:input message="impl:FooRequest" name="FooRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:FooResponse" name="FooResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="QRReceiptConnectorSoapBinding" type="impl:QRReceiptConnector">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="Foo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="FooRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="FooResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="QRReceiptConnectorService">
+
+      <wsdl:port binding="impl:QRReceiptConnectorSoapBinding" name="QRReceiptConnector">
+
+         <wsdlsoap:address location="http://localhost:8080/QR-Receipts-Webservice/services/QRReceiptConnector"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

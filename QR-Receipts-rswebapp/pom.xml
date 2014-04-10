@@ -10,8 +10,7 @@
     <groupId>com.project.qrreceipts</groupId>
     <artifactId>QR-Receipts-rswebapp</artifactId>
     <packaging>war</packaging>
-    <name>Simple CXF JAX-RS webapp service using spring configuration</name>
-    <description>Simple CXF JAX-RS webapp service using spring configuration</description>
+
     <properties>
         <jackson.version>1.8.6</jackson.version>
     </properties>
